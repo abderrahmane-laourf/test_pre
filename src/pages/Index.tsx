@@ -1,8 +1,4 @@
 import HeroSection from "@/components/HeroSection";
-import IntroductionSection from "@/components/IntroductionSection";
-import DefinitionSection from "@/components/DefinitionSection";
-import TechniquesSection from "@/components/TechniquesSection";
-import Footer from "@/components/Footer";
 import { Helmet } from "react-helmet-async";
 
 const Index = () => {
@@ -17,12 +13,7 @@ const Index = () => {
 
       <main>
         <HeroSection />
-        <IntroductionSection />
-        <DefinitionSection />
-        <TechniquesSection />
       </main>
-
-      <Footer />
     </div >
   );
 };
