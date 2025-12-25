@@ -194,7 +194,7 @@ export default function ConclusionPage() {
                       Préparé par
                     </p>
                     <p className="text-3xl font-bold text-foreground tracking-tight">
-                      Abderahmam Loourf
+                      Abderahmam Lauorf
                     </p>
                   </div>
                 </div>

@@ -53,93 +53,65 @@ const HeroSection = () => {
             <div className="section-container relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
                     {/* Topic badge */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="inline-flex items-center gap-3 px-6 py-3 glass-card mb-12"
-                    >
-                        <MessageSquare className="w-5 h-5 text-slate-700" />
-                        <span className="text-sm font-semibold text-slate-700">Parler entre humains</span>
-                        <motion.div
-                            animate={{ scale: [1, 1.3, 1] }}
-                            transition={{ duration: 2, repeat: Infinity }}
-                            className="w-2 h-2 rounded-full bg-mint"
-                        />
-                    </motion.div>
+                  
 
                     {/* Main title */}
                     <motion.h1
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-10 font-display text-reveal"
+                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 font-display text-reveal"
                     >
                         <span className="text-slate-900">L'Écoute Active</span>
                     </motion.h1>
 
-                    {/* Subtitle */}
-                    <motion.p
+                    {/* Engaging Question */}
+                    <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
-                        className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mb-14 leading-relaxed"
+                        className="mb-12"
                     >
-                        L'art de comprendre au-delà des mots. Maîtrisez la compétence
-                        fondamentale qui transforme chaque conversation en connexion authentique.
-                    </motion.p>
-
-                    {/* Stats row */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                        className="flex flex-wrap justify-center gap-10 mb-16"
-                    >
-                        {[
-                            { value: "85%", label: "des conflits évités" },
-                            { value: "3x", label: "meilleure compréhension" },
-                            { value: "100%", label: "applicable partout" },
-                        ].map((stat, index) => (
-                            <motion.div
-                                key={stat.label}
-                                whileHover={{ scale: 1.05 }}
-                                initial={{ opacity: 0, scale: 0.5 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 0.7 + index * 0.1 }}
-                                className="text-center group cursor-default smooth-scale"
-                            >
-                                <div className="text-4xl md:text-5xl font-bold text-slate-900 font-display human-pulse group-hover:scale-110 transition-transform">
-                                    {stat.value}
-                                </div>
-                                <div className="text-sm text-slate-600 mt-2">{stat.label}</div>
-                            </motion.div>
-                        ))}
+                        <p className="text-2xl sm:text-3xl md:text-4xl font-medium text-slate-700 mb-4">
+                          <span className="text-violet-custom font-bold">80 % </span>des erreurs en milieu professionnel sont liées à une mauvaise communication, souvent par manque d’écoute. ?
+                        </p>
                     </motion.div>
 
-                    {/* CTA Button */}
+                  
+                    {/* Enhanced CTA Button */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.7 }}
+                        transition={{ duration: 0.8, delay: 0.8 }}
                     >
                         <Link to="/introduction">
                             <motion.button
-                                whileHover={{ scale: 1.05 }}
+                                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)" }}
                                 whileTap={{ scale: 0.98 }}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.7 }}
-                                className="btn-primary group fade-in-up"
+                                transition={{ duration: 0.8, delay: 0.8 }}
+                                className="relative px-10 py-5 bg-gradient-to-r from-violet-custom to-cyan-custom text-white text-lg font-bold rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden"
                             >
-                                <span className="flex items-center gap-3">
+                                {/* Button glow effect */}
+                                <motion.div
+                                    animate={{
+                                        scale: [1, 1.2, 1],
+                                        opacity: [0.5, 0.8, 0.5],
+                                    }}
+                                    transition={{ duration: 2, repeat: Infinity }}
+                                    className="absolute inset-0 bg-gradient-to-r from-violet-400/30 to-cyan-400/30 blur-xl"
+                                />
+                                
+                                <span className="relative flex items-center gap-3">
+                                    <MessageSquare className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
                                     Commencer la présentation
                                     <motion.span
-                                        animate={{ x: [0, 5, 0] }}
-                                        transition={{ duration: 1.5, repeat: Infinity }}
-                                        className="human-blink"
+                                        animate={{ x: [0, 6, 0] }}
+                                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                                        className="group-hover:translate-x-2 transition-transform"
                                     >
-                                        <ArrowRight className="w-5 h-5" />
+                                        <ArrowRight className="w-6 h-6" />
                                     </motion.span>
                                 </span>
                             </motion.button>

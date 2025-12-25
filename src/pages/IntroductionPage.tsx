@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowLeft, Users, Globe } from "lucide-react";
+import { ArrowRight, ArrowLeft, Users, Globe, Send, MessageCircle, Radio, UserCheck, Reply, Ear, Brain, Smartphone } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function IntroductionPage() {
@@ -74,46 +74,220 @@ export default function IntroductionPage() {
           </div>
         </section>
 
-        {/* Concept 2: The Loop */}
-        <section className="bg-card border border-border p-8 rounded-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <h3 className="text-2xl font-bold mb-6 relative z-10">Le Problème Principal</h3>
-          <div className="grid md:grid-cols-3 gap-6 relative z-10">
-            <div className="bg-background p-6 rounded-xl shadow-sm text-center">
-              <div className="font-bold text-primary mb-2">Ce Que Je Veux Dire</div>
-              <p className="text-sm text-muted-foreground">Mon intention</p>
-            </div>
-            <div className="bg-background p-6 rounded-xl shadow-sm text-center">
-              <div className="font-bold text-primary mb-2">Ce Que Je Dis</div>
-              <p className="text-sm text-muted-foreground">Mes mots réels</p>
-            </div>
-            <div className="bg-background p-6 rounded-xl shadow-sm text-center">
-              <div className="font-bold text-primary mb-2">Ce Qu'il Comprend</div>
-              <p className="text-sm text-muted-foreground">Son interprétation</p>
+        {/* Communication Schema */}
+        <section className="space-y-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-display font-bold text-foreground mb-3">Le Processus de Communication</h2>
+            <p className="text-lg text-muted-foreground">Comment un message voyage de l'émetteur au récepteur</p>
+          </div>
+
+          {/* Communication Flow Diagram */}
+          <div className="relative bg-gradient-to-br from-violet-50 to-cyan-50 border-2 border-violet-200 rounded-3xl p-8 md:p-12 overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-300/20 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-300/20 rounded-full blur-3xl" />
+
+            <div className="relative space-y-8">
+              {/* Step 1: Émetteur */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="flex flex-col md:flex-row items-center gap-6 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                  <Send className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">1️⃣ Émetteur</h3>
+                  <p className="text-muted-foreground mb-2">La personne qui envoie le message.</p>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-violet-100 rounded-full text-sm text-violet-700 font-medium">
+                    <span className="w-1.5 h-1.5 bg-violet-500 rounded-full animate-pulse" />
+                    Exemple : Toi quand tu parles ou écris
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Arrow Down */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="flex justify-center"
+              >
+                <motion.div
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  className="text-violet-500"
+                >
+                  <ArrowRight className="w-8 h-8 rotate-90" />
+                </motion.div>
+              </motion.div>
+
+              {/* Step 2: Message */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="flex flex-col md:flex-row items-center gap-6 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                  <MessageCircle className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">2️⃣ Message</h3>
+                  <p className="text-muted-foreground mb-2">L'information ou idée que l'émetteur veut transmettre.</p>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-100 rounded-full text-sm text-blue-700 font-medium">
+                    <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />
+                    Exemple : "Bonjour, comment ça va ?"
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Arrow Down */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="flex justify-center"
+              >
+                <motion.div
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, delay: 0.3 }}
+                  className="text-blue-500"
+                >
+                  <ArrowRight className="w-8 h-8 rotate-90" />
+                </motion.div>
+              </motion.div>
+
+              {/* Step 3: Canal */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                className="flex flex-col md:flex-row items-center gap-6 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                  <Radio className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">3️⃣ Canal</h3>
+                  <p className="text-muted-foreground mb-2">Le moyen utilisé pour transmettre le message, verbal ou non-verbal.</p>
+                  <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                    <span className="px-3 py-1.5 bg-cyan-100 rounded-full text-sm text-cyan-700 font-medium">Parole</span>
+                    <span className="px-3 py-1.5 bg-cyan-100 rounded-full text-sm text-cyan-700 font-medium">Écriture</span>
+                    <span className="px-3 py-1.5 bg-cyan-100 rounded-full text-sm text-cyan-700 font-medium">Gestes</span>
+                    <span className="px-3 py-1.5 bg-cyan-100 rounded-full text-sm text-cyan-700 font-medium">Ton de voix</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Arrow Down */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                className="flex justify-center"
+              >
+                <motion.div
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, delay: 0.6 }}
+                  className="text-cyan-500"
+                >
+                  <ArrowRight className="w-8 h-8 rotate-90" />
+                </motion.div>
+              </motion.div>
+
+              {/* Step 4: Récepteur */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.7 }}
+                className="flex flex-col md:flex-row items-center gap-6 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                  <UserCheck className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">4️⃣ Récepteur</h3>
+                  <p className="text-muted-foreground mb-2">La personne qui reçoit et interprète le message.</p>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-100 rounded-full text-sm text-emerald-700 font-medium">
+                    <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+                    Exemple : Ton ami qui écoute ce que tu dis
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Arrow Down */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.8 }}
+                className="flex justify-center"
+              >
+                <motion.div
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, delay: 0.9 }}
+                  className="text-emerald-500"
+                >
+                  <ArrowRight className="w-8 h-8 rotate-90" />
+                </motion.div>
+              </motion.div>
+
+              {/* Step 5: Feedback */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.9 }}
+                className="flex flex-col md:flex-row items-center gap-6 bg-gradient-to-r from-orange-50 to-rose-50 border-2 border-orange-300 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-rose-500 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                  <Reply className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">5️⃣ Feedback (réponse)</h3>
+                  <p className="text-muted-foreground mb-2">La réaction ou réponse du récepteur qui montre qu'il a compris ou non le message.</p>
+                  <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                    <span className="px-3 py-1.5 bg-orange-100 rounded-full text-sm text-orange-700 font-medium">😊 Sourire</span>
+                    <span className="px-3 py-1.5 bg-orange-100 rounded-full text-sm text-orange-700 font-medium">💬 Parole</span>
+                    <span className="px-3 py-1.5 bg-orange-100 rounded-full text-sm text-orange-700 font-medium">❓ Question</span>
+                    <span className="px-3 py-1.5 bg-orange-100 rounded-full text-sm text-orange-700 font-medium">👍 Hochement de tête</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Feedback Arrow Loop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 1 }}
+                className="flex justify-center pt-4"
+              >
+                <div className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-violet-100 to-orange-100 border-2 border-dashed border-violet-300 rounded-full">
+                  <Reply className="w-5 h-5 text-violet-600" />
+                  <p className="text-sm font-bold text-violet-700">Le cycle continue...</p>
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  >
+                    <ArrowRight className="w-5 h-5 text-violet-600" />
+                  </motion.div>
+                </div>
+              </motion.div>
             </div>
           </div>
-          <p className="mt-8 text-center text-muted-foreground">
-            Entre ce qu'on veut dire et ce que l'autre comprend, il y a souvent une grande différence.
-            Nos préjugés, notre vocabulaire et notre ton créent ce fossé.
-          </p>
         </section>
 
-        {/* Key Takeaways */}
-        <section className="bg-secondary/30 p-8 rounded-2xl">
-          <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-            <Globe className="w-5 h-5" /> Points Clés à Retenir
-          </h3>
-          <ul className="space-y-3">
-            <li className="flex items-start gap-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-              <span className="text-foreground">La communication est <strong>continue</strong> et <strong>inévitable</strong> - on communique toujours, même sans parler.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-              <span className="text-foreground">Ce n'est pas que les mots : le langage corporel, le ton et le contexte représentent 93% du message.</span>
-            </li>
-          </ul>
-        </section>
 
         {/* Navigation */}
         <div className="flex justify-between items-center pt-8">
