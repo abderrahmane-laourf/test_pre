@@ -1,0 +1,379 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* ============================================
+   ELITE DESIGN SYSTEM - CSS VARIABLES
+   ============================================ */
+
+@layer base {
+  :root {
+    /* Tailwind Theme Variables - REFINED ELITE PALETTE */
+    /* Background: Soft Porcelain / Slate 50 */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    /* Obsidian / Slate 900 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary: Electric Purple (Modern Tech-Inspired) */
+    --primary: 262 83% 58%;
+    /* #7C3AED */
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary: Electric Cyan */
+    --secondary: 188 94% 47%;
+    /* #06B6D4 */
+    --secondary-foreground: 210 40% 98%;
+
+    /* Accent: Technical Orange */
+    --accent: 24 95% 53%;
+    /* #F97316 */
+    --accent-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+    /* Slate 500 */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    /* Slate 200 */
+    --input: 214 32% 91%;
+    --ring: 262 83% 58%;
+
+    --radius: 1rem;
+    /* Modern rounded feel */
+
+    /* Technical Grid Variables */
+    --grid-size: 20px;
+    --grid-color: 214 40% 85%;
+    --grid-opacity: 0.18;
+    --sub-grid-size: 5px;
+    --sub-grid-color: 214 40% 88%;
+    --sub-grid-opacity: 0.08;
+
+    /* Custom Variables - Professional Font Suite */
+    --font-display: 'Playfair Display', Georgia, serif; /* Elegant serif for headings */
+    --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif; /* Modern geometric for subheadings */
+    --font-body: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif; /* Clean sans-serif for body */
+    --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+
+    --color-primary: #7C3AED;
+    --color-text-primary: #1e3a8a;
+    --color-text-secondary: #64748B;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900;
+    font-family: var(--font-body);
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    font-variant-ligatures: common-ligatures;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Display headings - Elegant serif */
+  h1, h2 {
+    font-family: var(--font-display);
+    @apply tracking-tight text-slate-900;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  /* Subheadings - Modern geometric */
+  h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    @apply tracking-tight text-slate-900;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  /* Professional text styling */
+  p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  /* Enhanced readability */
+  .text-lead {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    font-weight: 400;
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Professional emphasis */
+  strong, b {
+    font-weight: 600;
+    color: hsl(var(--foreground));
+  }
+
+  /* Elegant italics */
+  em, i {
+    font-style: italic;
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+
+  /* Elite Button Overrides */
+  .btn-primary {
+    @apply bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white shadow-lg shadow-purple-500/25 border-0 transition-all duration-300 hover:-translate-y-0.5 rounded-xl font-semibold tracking-wide !important;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 shadow-sm hover:shadow transition-all duration-300 rounded-xl font-medium !important;
+  }
+
+  /* Glass/Elite Card */
+  .card-elite {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl shadow-slate-200/50 rounded-2xl;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent;
+  }
+  
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-md border border-white/30 shadow-lg;
+  }
+  
+  .gradient-hero {
+    background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+  }
+
+  /* Technical Grid Backgrounds */
+  .technical-grid {
+    background-image: 
+      linear-gradient(hsl(var(--grid-color)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--grid-color)) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+    background-position: -1px -1px;
+    opacity: var(--grid-opacity);
+  }
+
+  .technical-grid-fine {
+    background-image: 
+      linear-gradient(hsl(var(--sub-grid-color)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--sub-grid-color)) 1px, transparent 1px);
+    background-size: var(--sub-grid-size) var(--sub-grid-size);
+    background-position: -1px -1px;
+    opacity: var(--sub-grid-opacity);
+  }
+
+  .technical-grid-dual {
+    background-image: 
+      linear-gradient(hsl(var(--grid-color)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--grid-color)) 1px, transparent 1px),
+      linear-gradient(hsl(var(--sub-grid-color)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--sub-grid-color)) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size), var(--grid-size) var(--grid-size), var(--sub-grid-size) var(--sub-grid-size), var(--sub-grid-size) var(--sub-grid-size);
+    background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+    opacity: var(--grid-opacity);
+  }
+
+  .technical-grid-dots {
+    background-image: radial-gradient(circle, hsl(var(--grid-color)) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+    opacity: var(--grid-opacity);
+  }
+
+  .technical-grid-blueprint {
+    background-image: 
+      linear-gradient(hsl(214 100% 97%) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(214 100% 97%) 1px, transparent 1px),
+      linear-gradient(45deg, hsl(24 95% 90%) 0.5px, transparent 0.5px),
+      linear-gradient(-45deg, hsl(24 95% 90%) 0.5px, transparent 0.5px);
+    background-size: 40px 40px, 40px 40px, 80px 80px, 80px 80px;
+    background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+    opacity: 0.06;
+  }
+
+  .technical-grid-strong {
+    background-image: 
+      linear-gradient(hsl(214 40% 85%) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(214 40% 85%) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: -1px -1px;
+    opacity: 0.3;
+  }
+
+  /* Professional typography utilities */
+  .font-elegant {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .font-modern {
+    font-family: var(--font-heading);
+    font-weight: 500;
+  }
+
+  .font-clean {
+    font-family: var(--font-body);
+    font-weight: 400;
+  }
+
+  .text-display {
+    @apply font-elegant;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .text-headline {
+    @apply font-modern;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .text-body {
+    @apply font-clean;
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+
+  .text-caption {
+    @apply font-clean;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    opacity: 0.8;
+  }
+
+  /* Technical accent colors */
+  .text-tech-accent {
+    color: hsl(var(--accent));
+  }
+
+  .bg-tech-accent {
+    background-color: hsl(var(--accent));
+  }
+
+  .border-tech-accent {
+    border-color: hsl(var(--accent));
+  }
+
+  /* Professional animations */
+  .float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+
+  .human-pulse {
+    animation: humanPulse 3s ease-in-out infinite;
+  }
+
+  .text-reveal {
+    animation: textReveal 1.2s ease-out forwards;
+  }
+
+  .smooth-scale {
+    animation: smoothScale 0.5s ease-out;
+  }
+
+  .human-blink {
+    animation: humanBlink 4s ease-in-out infinite;
+  }
+}
+
+/* Professional keyframes */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeInUp {
+  0% { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes slideInLeft {
+  0% { 
+    opacity: 0; 
+    transform: translateX(-50px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
+@keyframes slideInRight {
+  0% { 
+    opacity: 0; 
+    transform: translateX(50px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
+@keyframes humanPulse {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+  50% { 
+    opacity: 0.8; 
+    transform: scale(1.02); 
+  }
+}
+
+@keyframes textReveal {
+  0% { 
+    opacity: 0; 
+    transform: translateY(20px) scale(0.95); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+@keyframes smoothScale {
+  0% { 
+    transform: scale(0.95); 
+  }
+  100% { 
+    transform: scale(1); 
+  }
+}
+
+@keyframes humanBlink {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0.3; }
+}
