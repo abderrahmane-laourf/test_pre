@@ -138,7 +138,7 @@ export default function TechniquesPage() {
           </Link>
           <Link to="/processus">
             <Button size="lg" className="group text-white bg-indigo-600 hover:bg-indigo-700 px-8">
-              Page 4 : Le Processus (Étudiant B)
+              Le Processus
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>

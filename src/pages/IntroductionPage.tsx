@@ -20,15 +20,7 @@ export default function IntroductionPage() {
         </div>
 
         <div className="section-container relative z-10 px-6 max-w-5xl mx-auto text-center space-y-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold mb-6"
-          >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Page 1 / 8 • Étudiant A
-          </motion.div>
-
+          
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

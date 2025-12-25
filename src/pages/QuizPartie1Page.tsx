@@ -128,7 +128,7 @@ export default function QuizPartie1Page() {
                     questions={questions}
                     title="Quiz – Partie 1"
                     nextPagePath="/benefices"
-                    nextPageTitle="Suite : Introduction Étudiant B"
+                    nextPageTitle="Suite : Bénéfices"
                 />
 
                 {/* Navigation Footer */}

@@ -117,36 +117,33 @@ export default function PratiquePage() {
         </section>
 
         {/* Quiz Access Button - End of Student B Section */}
-        <section className="bg-gradient-to-r from-indigo-100 to-indigo-50 dark:from-indigo-900/30 dark:to-indigo-900/10 rounded-3xl p-10 md:p-16 text-center space-y-6 border border-indigo-200 dark:border-indigo-800">
-          <ClipboardCheck className="w-16 h-16 mx-auto text-indigo-600" />
-          <h2 className="text-3xl font-display font-bold">Fin de la Partie B</h2>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            Vous avez terminé les 3 pages de l'Étudiant B. Testez vos connaissances avec 8 questions.
-          </p>
-          <Link to="/quiz-partie-2">
-            <Button size="lg" className="px-10 py-6 text-lg mt-4 bg-indigo-600 hover:bg-indigo-700">
-              <ClipboardCheck className="w-5 h-5 mr-2" />
-              Questions – Partie 2
-            </Button>
-          </Link>
-        </section>
+        <section className="relative bg-gradient-to-br from-purple-500/15 via-purple-600/10 to-purple-700/15 backdrop-blur-xl rounded-3xl p-10 md:p-16 text-center space-y-6 border border-purple-300/30 shadow-2xl shadow-purple-500/25 overflow-hidden">
+          {/* Background decorative elements */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-purple-700/10 rounded-3xl" />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400/30 to-purple-500/25 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-purple-500/25 to-purple-600/20 rounded-full blur-2xl" />
 
-        {/* Conclusion / Manifesto */}
-        <section className="bg-primary text-primary-foreground rounded-3xl p-10 md:p-16 text-center space-y-8 relative overflow-hidden">
-          <Sparkles className="absolute top-10 right-10 w-20 h-20 text-white opacity-10" />
+          {/* Content */}
+          <div className="relative z-10">
+            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/40">
+              <ClipboardCheck className="w-10 h-10 text-white" />
+            </div>
 
-          <h2 className="text-3xl md:text-5xl font-display font-bold">Le Voyage Commence</h2>
-          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-            Merci d'avoir suivi ce module. Rappelez-vous :
-            <br className="my-4" />
-            <span className="font-bold text-white text-2xl block mt-4">"Écouter, c'est vraiment se soucier de l'autre."</span>
-          </p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent mb-4">
+              Testez vos connaissances
+            </h2>
 
-          <Link to="/">
-            <Button size="lg" variant="secondary" className="mt-8 px-10 h-14 text-lg rounded-full">
-              <Home className="w-5 h-5 mr-3" /> Retour à l'Accueil
-            </Button>
-          </Link>
+            <p className="text-lg text-slate-600 max-w-xl mx-auto leading-relaxed mb-8">
+              Testez vos connaissances avec 8 questions sur ce que vous avez appris.
+            </p>
+
+            <Link to="/quiz-partie-2">
+              <Button size="lg" className="px-10 py-6 text-lg bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold rounded-2xl shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300 hover:-translate-y-1 border border-white/20">
+                <ClipboardCheck className="w-5 h-5 mr-3" />
+                Questions – Partie 2
+              </Button>
+            </Link>
+          </div>
         </section>
 
         {/* Navigation Footer */}

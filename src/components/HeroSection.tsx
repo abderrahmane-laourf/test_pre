@@ -52,8 +52,6 @@ const HeroSection = () => {
 
             <div className="section-container relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
-                    {/* Topic badge */}
-                  
 
                     {/* Main title */}
                     <motion.h1
@@ -62,7 +60,7 @@ const HeroSection = () => {
                         transition={{ duration: 0.8, delay: 0.4 }}
                         className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 font-display text-reveal"
                     >
-                        <span className="text-slate-900">L'Écoute Active</span>
+                        <span className="text-slate-900">L''Écoute Active</span>
                     </motion.h1>
 
                     {/* Engaging Question */}
@@ -73,7 +71,7 @@ const HeroSection = () => {
                         className="mb-12"
                     >
                         <p className="text-2xl sm:text-3xl md:text-4xl font-medium text-slate-700 mb-4">
-                          <span className="text-violet-custom font-bold">80 % </span>des erreurs en milieu professionnel sont liées à une mauvaise communication, souvent par manque d’écoute. ?
+                            <span className="text-violet-custom font-bold">80 % </span>des erreurs en milieu professionnel sont liées à une mauvaise communication, souvent par manque d''écoute.
                         </p>
                     </motion.div>
 

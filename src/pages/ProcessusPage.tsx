@@ -114,18 +114,33 @@ export default function ProcessusPage() {
         </section>
 
         {/* Quiz Access Button - End of Student A Section */}
-        <section className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-3xl p-10 md:p-16 text-center space-y-6 border border-primary/20">
-          <ClipboardCheck className="w-16 h-16 mx-auto text-primary" />
-          <h2 className="text-3xl font-display font-bold">Fin de la Partie A</h2>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            Vous avez terminé les 4 pages de l'Étudiant A. Testez vos connaissances avec 8 questions.
-          </p>
-          <Link to="/quiz-partie-1">
-            <Button size="lg" className="px-10 py-6 text-lg mt-4">
-              <ClipboardCheck className="w-5 h-5 mr-2" />
-              Questions – Partie 1
-            </Button>
-          </Link>
+        <section className="relative bg-gradient-to-br from-purple-500/15 via-purple-600/10 to-purple-700/15 backdrop-blur-xl rounded-3xl p-10 md:p-16 text-center space-y-6 border border-purple-300/30 shadow-2xl shadow-purple-500/25 overflow-hidden">
+          {/* Background decorative elements */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-purple-700/10 rounded-3xl" />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400/30 to-purple-500/25 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-purple-500/25 to-purple-600/20 rounded-full blur-2xl" />
+
+          {/* Content */}
+          <div className="relative z-10">
+            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/40">
+              <ClipboardCheck className="w-10 h-10 text-white" />
+            </div>
+
+            <h2 className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent mb-4">
+              Testez vos connaissances
+            </h2>
+
+            <p className="text-lg text-slate-600 max-w-xl mx-auto leading-relaxed mb-8">
+              Testez vos connaissances avec 8 questions sur ce que vous avez appris.
+            </p>
+
+            <Link to="/quiz-partie-1">
+              <Button size="lg" className="px-10 py-6 text-lg bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold rounded-2xl shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300 hover:-translate-y-1 border border-white/20">
+                <ClipboardCheck className="w-5 h-5 mr-3" />
+                Questions – Partie 1
+              </Button>
+            </Link>
+          </div>
         </section>
 
         {/* Navigation Footer */}
@@ -138,7 +153,7 @@ export default function ProcessusPage() {
           </Link>
           <Link to="/benefices">
             <Button size="lg" className="group bg-indigo-600 hover:bg-indigo-700 text-white px-8">
-              Page 5 : Bénéfices (Étudiant B)
+              Bénéfices
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
