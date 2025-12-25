@@ -40,20 +40,24 @@ const pageVariants: Variants = {
 const curtainVariants: Variants = {
     initial: {
         scaleY: 1,
-        transformOrigin: "top"
+        transformOrigin: "top",
+        opacity: 0.3
     },
     in: {
         scaleY: 0,
         transformOrigin: "top",
+        opacity: 0,
         transition: {
-            duration: 0.5,
+            duration: 0.3,
             ease: [0.76, 0, 0.24, 1],
-            delay: 0.1
+            scaleY: { duration: 0.3 },
+            opacity: { duration: 0.2 }
         }
     },
     out: {
         scaleY: 0,
-        transformOrigin: "top"
+        transformOrigin: "top",
+        opacity: 0
     }
 };
 
