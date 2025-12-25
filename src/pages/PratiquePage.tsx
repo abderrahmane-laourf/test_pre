@@ -131,24 +131,6 @@ export default function PratiquePage() {
           </Link>
         </section>
 
-        {/* Conclusion / Manifesto */}
-        <section className="bg-primary text-primary-foreground rounded-3xl p-10 md:p-16 text-center space-y-8 relative overflow-hidden">
-          <Sparkles className="absolute top-10 right-10 w-20 h-20 text-white opacity-10" />
-
-          <h2 className="text-3xl md:text-5xl font-display font-bold">Le Voyage Commence</h2>
-          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-            Merci d'avoir suivi ce module. Rappelez-vous :
-            <br className="my-4" />
-            <span className="font-bold text-white text-2xl block mt-4">"Écouter, c'est vraiment se soucier de l'autre."</span>
-          </p>
-
-          <Link to="/">
-            <Button size="lg" variant="secondary" className="mt-8 px-10 h-14 text-lg rounded-full">
-              <Home className="w-5 h-5 mr-3" /> Retour à l'Accueil
-            </Button>
-          </Link>
-        </section>
-
         {/* Navigation Footer */}
         <div className="flex justify-between items-center pt-8 border-t border-border">
           <Link to="/obstacles">

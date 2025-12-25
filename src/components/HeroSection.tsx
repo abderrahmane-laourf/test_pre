@@ -82,23 +82,24 @@ const HeroSection = () => {
                     >
                         <Link to="/introduction">
                             <motion.button
-                                whileHover={{ scale: 1.05 }}
+                                whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.7 }}
-                                className="btn-primary group fade-in-up"
+                                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-semibold text-lg rounded-2xl shadow-2xl shadow-violet-500/25 hover:shadow-violet-500/40 transition-all duration-300 hover:-translate-y-1 border border-white/20 backdrop-blur-sm"
                             >
-                                <span className="flex items-center gap-3">
+                                <span className="relative z-10 flex items-center gap-3">
                                     Commencer la présentation
                                     <motion.span
                                         animate={{ x: [0, 5, 0] }}
                                         transition={{ duration: 1.5, repeat: Infinity }}
-                                        className="human-blink"
+                                        className="ml-2"
                                     >
                                         <ArrowRight className="w-5 h-5" />
                                     </motion.span>
                                 </span>
+                                <div className="absolute inset-0 bg-gradient-to-r from-violet-700 to-cyan-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                             </motion.button>
                         </Link>
                     </motion.div>
