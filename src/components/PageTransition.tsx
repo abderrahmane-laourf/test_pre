@@ -8,116 +8,78 @@ interface PageTransitionProps {
 const pageVariants: Variants = {
     initial: {
         opacity: 0,
-        scale: 0.95,
-        y: 100,
-        rotateX: -8,
-        filter: "blur(8px) brightness(0.9)",
+        scale: 0.98,
+        y: 20,
     },
     in: {
         opacity: 1,
         scale: 1,
         y: 0,
-        rotateX: 0,
-        filter: "blur(0px) brightness(1)",
         transition: {
-            duration: 0.7,
-            ease: [0.25, 0.46, 0.45, 0.94],
-            y: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] },
-            scale: { duration: 0.5 },
-            filter: { duration: 0.4 },
-            rotateX: { duration: 0.5 }
+            duration: 0.4,
+            ease: [0.22, 1, 0.36, 1],
+            opacity: { duration: 0.3 },
+            scale: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+            y: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
         }
     },
     out: {
         opacity: 0,
-        scale: 1.05,
-        y: -100,
-        rotateX: 8,
-        filter: "blur(8px) brightness(0.9)",
+        scale: 0.98,
+        y: -20,
+        transition: {
+            duration: 0.3,
+            ease: [0.76, 0, 0.24, 1],
+            opacity: { duration: 0.2 },
+            scale: { duration: 0.3, ease: [0.76, 0, 0.24, 1] },
+            y: { duration: 0.3, ease: [0.76, 0, 0.24, 1] }
+        }
+    }
+};
+
+const curtainVariants: Variants = {
+    initial: {
+        scaleY: 1,
+        transformOrigin: "top"
+    },
+    in: {
+        scaleY: 0,
+        transformOrigin: "top",
         transition: {
             duration: 0.5,
-            ease: [0.55, 0.055, 0.675, 0.19],
-            y: { duration: 0.5, ease: [0.55, 0.055, 0.675, 0.19] },
-            scale: { duration: 0.3 },
-            filter: { duration: 0.3 },
-            rotateX: { duration: 0.3 }
-        }
-    }
-};
-
-const backgroundVariants: Variants = {
-    initial: {
-        opacity: 0,
-        background: "linear-gradient(180deg, rgba(124, 58, 237, 0) 0%, rgba(6, 182, 212, 0) 100%)"
-    },
-    in: {
-        opacity: 1,
-        background: [
-            "linear-gradient(180deg, rgba(124, 58, 237, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%)",
-            "linear-gradient(180deg, rgba(124, 58, 237, 0.05) 0%, rgba(6, 182, 212, 0.1) 100%)",
-            "linear-gradient(180deg, rgba(124, 58, 237, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%)"
-        ],
-        transition: {
-            duration: 3,
-            ease: "easeInOut",
-            background: {
-                duration: 3,
-                repeat: Infinity,
-                repeatType: "reverse"
-            }
-        }
-    },
-    out: {
-        opacity: 0,
-        background: "linear-gradient(180deg, rgba(124, 58, 237, 0) 0%, rgba(6, 182, 212, 0) 100%)"
-    }
-};
-
-const overlayVariants: Variants = {
-    initial: {
-        opacity: 0
-    },
-    in: {
-        opacity: 1,
-        transition: {
-            duration: 0.2,
+            ease: [0.76, 0, 0.24, 1],
             delay: 0.1
         }
     },
     out: {
-        opacity: 0,
-        transition: {
-            duration: 0.2
-        }
+        scaleY: 0,
+        transformOrigin: "top"
     }
 };
 
 const PageTransition = ({ children }: PageTransitionProps) => {
     return (
-        <motion.div
-            className="relative min-h-full w-full"
-            variants={pageVariants}
-            initial="initial"
-            animate="in"
-            exit="out"
-        >
-            {/* Content overlay */}
+        <>
+            {/* Transition curtain */}
             <motion.div
-                className="absolute inset-0 z-10 pointer-events-none"
-                style={{
-                    background: "radial-gradient(circle at center, transparent 0%, rgba(255, 255, 255, 0.03) 100%)"
-                }}
-                variants={overlayVariants}
+                className="fixed inset-0 z-50 bg-gradient-to-br from-violet-600 to-cyan-500 pointer-events-none"
+                variants={curtainVariants}
                 initial="initial"
                 animate="in"
                 exit="out"
             />
             
-            {/* Page content */}
-            <div className="relative z-20">
+            {/* Page content with smooth transition */}
+            <motion.div
+                className="relative min-h-full w-full"
+                variants={pageVariants}
+                initial="initial"
+                animate="in"
+                exit="out"
+            >
                 {children}
-            </div>
-        </motion.div>
+            </motion.div>
+        </>
     );
 };
 
